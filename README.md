@@ -18,18 +18,14 @@ This project is written in Java and provides a graphical user interface (GUI) fo
 
 ### Installation
 
-1. **Clone the repository**:
+Clone the repository
+
    ```bash
-   git clone https://github.com/yourusername/handy-tools-spring-boot.git
-   cd handy-tools-spring-boot
-2. **Build the project**
-   ```bash
+   git clone https://github.com/jfwenisch/nettools.git
+   cd nettools
    mvn clean install
-4. **Run the application**
-   ```bash
    mvn spring-boot:run
-
-
+```
 ## Usage
 Once the application is running, open your web browser and navigate to http://localhost:8080. You will see the graphical user interface with various tools available for use.
 
