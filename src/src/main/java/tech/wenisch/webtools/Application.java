@@ -1,4 +1,4 @@
-package tech.wenisch.tools;
+package tech.wenisch.webtools;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

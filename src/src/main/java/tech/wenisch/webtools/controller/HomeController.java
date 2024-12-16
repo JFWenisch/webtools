@@ -1,9 +1,9 @@
-package tech.wenisch.tools.controller;
+package tech.wenisch.webtools.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
-import tech.wenisch.tools.util.ResponseManager;
+import tech.wenisch.webtools.util.ResponseManager;
 
 import java.util.Enumeration;
 import java.util.HashMap;

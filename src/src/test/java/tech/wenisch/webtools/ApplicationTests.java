@@ -1,4 +1,4 @@
-package tech.wenisch.tools;
+package tech.wenisch.webtools;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package tech.wenisch.tools.util;
+package tech.wenisch.webtools.util;
 
 import java.util.Enumeration;
 import java.util.HashMap;

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tech.wenisch</groupId>
-	<artifactId>tools</artifactId>
+	<artifactId>webtools</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tech.wenisch.tools</name>
 	<description>tech.wenisch.tools</description>
