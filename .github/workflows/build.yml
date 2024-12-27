@@ -86,7 +86,7 @@ jobs:
 
     - name: Clone charts repository
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
       run: |
         git clone https://$GH_TOKEN@github.com/JFWenisch/charts.git
         cp ./release/*.tgz charts/webtools/
