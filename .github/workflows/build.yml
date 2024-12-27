@@ -68,6 +68,35 @@ jobs:
           ghcr.io/jfwenisch/webtools:latest
         labels: ${{ steps.meta.outputs.labels }}
 
+   - name: Update Helm chart version
+      run:  |
+        yq eval '.appVersion = "${{ needs.version.outputs.tag }}"' -i chart/Chart.yaml
+        yq eval '.version = "${{ needs.version.outputs.tag }}"' -i chart/Chart.yaml
+
+    - name: Commit and push updated Helm chart
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add chart/Chart.yaml
+        git commit -m "[skip ci] Update Helm chart appVersion to ${{ needs.version.outputs.tag }}"
+        git push origin ${{ github.ref }}
+
+    - name: Package Helm chart
+      run: helm package chart/ --destination ./release
+
+    - name: Clone charts repository
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        git clone https://$GH_TOKEN@github.com/JFWenisch/charts.git
+        cp ./release/*.tgz charts/webtools/
+        cd charts
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "Add webtools chart in version ${{ needs.version.outputs.tag }}"
+        git push https://$GH_TOKEN@github.com/JFWenisch/charts.git main
+
 
   release:
     runs-on: ubuntu-latest
