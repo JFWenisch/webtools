@@ -68,7 +68,7 @@ jobs:
           ghcr.io/jfwenisch/webtools:latest
         labels: ${{ steps.meta.outputs.labels }}
 
-   - name: Update Helm chart version
+    - name: Update Helm chart version
       run:  |
         yq eval '.appVersion = "${{ needs.version.outputs.tag }}"' -i chart/Chart.yaml
         yq eval '.version = "${{ needs.version.outputs.tag }}"' -i chart/Chart.yaml
